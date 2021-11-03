@@ -5,17 +5,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StartupSceneController">
    <children>
       <Label layoutX="57.0" layoutY="14.0" text="Input the following information for use in calculations:" />
       <Label layoutX="67.0" layoutY="64.0" text="Insulin Carb Ratio:" />
-      <TextField layoutX="185.0" layoutY="59.0" />
+      <TextField fx:id="ICRatioField" layoutX="185.0" layoutY="59.0" />
       <Label layoutX="67.0" layoutY="105.0" text="Correction Factor:" />
-      <TextField layoutX="185.0" layoutY="100.0" />
+      <TextField fx:id="correctionFactorField" layoutX="185.0" layoutY="100.0" />
       <Label layoutX="56.0" layoutY="149.0" text="Target Blood Glucose:" />
-      <TextField layoutX="185.0" layoutY="145.0" />
-      <Button layoutX="178.0" layoutY="188.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="179.0" layoutY="460.0" mnemonicParsing="false" text="Next" />
+      <TextField fx:id="targetBGField" layoutX="185.0" layoutY="145.0" />
+      <Button layoutX="178.0" layoutY="188.0" mnemonicParsing="false" onAction="#sendData" text="Save" />
+      <Button layoutX="179.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToBolusCalc" text="Next" />
    </children>
 </AnchorPane>
