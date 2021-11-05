@@ -7,13 +7,15 @@ public class Data {
     private int targetBG;
     private int curBG;
     private int carbs;
+    private BasalPlan bp;
 
-    public Data(int ICRatio, int correctionFactor, int targetBG, int curBG, int carbs){
+    public Data(int ICRatio, int correctionFactor, int targetBG, int curBG, int carbs, BasalPlan bp){
         this.ICRatio = ICRatio;
         this.correctionFactor = correctionFactor;
         this.targetBG = targetBG;
         this.curBG = curBG;
         this.carbs = carbs;
+        this.bp = bp;
     }
 
     public Data(int ICRatio, int correctionFactor, int targetBG){
@@ -25,6 +27,10 @@ public class Data {
     public Data(int curBG, int carbs){
         this.curBG = curBG;
         this.carbs = carbs;
+    }
+
+    public Data(BasalPlan bp){
+        this.bp = bp;
     }
 
     public int getICRatio() {
@@ -65,5 +71,13 @@ public class Data {
 
     public void setCarbs(int carbs) {
         this.carbs = carbs;
+    }
+
+    public BasalPlan getBasalPlan() {
+        return bp;
+    }
+
+    public void setBasalPlan(BasalPlan bp) {
+        this.bp = bp;
     }
 }
