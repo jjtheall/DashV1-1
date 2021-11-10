@@ -2,6 +2,7 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
@@ -15,6 +16,7 @@ public class StartupSceneController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private Data d;
 
     @FXML
     private TextField ICRatioField;
@@ -24,12 +26,20 @@ public class StartupSceneController {
     private TextField targetBGField;
 
     @FXML
+    private void receiveData(MouseEvent event){
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        d = (Data) stage.getUserData();
+    }
+
+    @FXML
     private void sendData(ActionEvent event) throws IOException{
         int ICRatio = Integer.parseInt(ICRatioField.getText());
         int correctionFactor = Integer.parseInt(correctionFactorField.getText());
         int targetBG = Integer.parseInt(targetBGField.getText());
 
-        Data d = new Data(ICRatio, correctionFactor, targetBG);
+        d.setICRatio(ICRatio);
+        d.setCorrectionFactor(correctionFactor);
+        d.setTargetBG(targetBG);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.close();

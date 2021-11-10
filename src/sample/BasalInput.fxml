@@ -5,8 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BasalInputController">
    <children>
       <Label layoutX="93.0" layoutY="14.0" text="Enter Basal Rates for a full 24-hour day:" />
       <TextField fx:id="midnightToOneField" layoutX="88.0" layoutY="34.0" prefHeight="26.0" prefWidth="70.0" />
@@ -57,7 +56,7 @@
       <Label layoutX="243.0" layoutY="408.0" text="10-11PM" />
       <TextField fx:id="twentyThreeToMidnightField" layoutX="302.0" layoutY="440.0" prefHeight="26.0" prefWidth="70.0" />
       <Label layoutX="243.0" layoutY="444.0" text="11-12AM" />
-      <Button fx:id="save" layoutX="178.0" layoutY="412.0" mnemonicParsing="false" text="Save" />
-      <Button fx:id="next" layoutX="179.0" layoutY="448.0" mnemonicParsing="false" text="Next" />
+      <Button fx:id="save" layoutX="178.0" layoutY="412.0" mnemonicParsing="false" onAction="#sendData" text="Save" />
+      <Button fx:id="next" layoutX="179.0" layoutY="448.0" mnemonicParsing="false" onAction="#switchToStartupScene" text="Next" />
    </children>
 </AnchorPane>

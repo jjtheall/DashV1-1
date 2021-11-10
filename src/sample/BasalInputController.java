@@ -70,6 +70,7 @@ public class BasalInputController {
     @FXML
     private TextField twentyThreeToMidnightField;
 
+    @FXML
     private void sendData(ActionEvent event) throws IOException{
         double a = Double.parseDouble(midnightToOneField.getText());
         double b = Double.parseDouble(oneToTwoField.getText());
@@ -99,8 +100,24 @@ public class BasalInputController {
         bp = new BasalPlan(a,b,c,d1,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x);
         d = new Data(bp);
 
-        //look at StartupSceenController sendData to continue
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.close();
 
+        root = FXMLLoader.load(getClass().getResource("BasalInput.fxml"));
 
+        stage.setUserData(d);
+
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void switchToStartupScene(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("StartupScene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

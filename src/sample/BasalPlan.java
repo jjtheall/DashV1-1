@@ -2,6 +2,7 @@ package sample;
 
 public class BasalPlan {
 
+    //change to array of doubles
     private double midnightToOne;
     private double oneToTwo;
     private double twoToThree;
@@ -26,6 +27,8 @@ public class BasalPlan {
     private double twentyOneToTwentyTwo;
     private double twentyTwoToTwentyThree;
     private double twentyThreeToMidnight;
+
+    //private double[] rates = new double[24];
 
     public BasalPlan(double a, double b, double c, double d, double e, double f, double g, double h, double i,
                      double j, double k, double l, double m, double n, double o, double p, double q, double r,
@@ -247,4 +250,18 @@ public class BasalPlan {
     public void setTwentyThreeToMidnight(double twentyThreeToMidnight) {
         this.twentyThreeToMidnight = twentyThreeToMidnight;
     }
+
+    /*
+    public double[] getRates(){
+        return rates;
+    }
+
+    public void setRates(double[] rates){
+        this.rates = rates;
+    }
+
+    public void setRate(double rate, int index){
+        this.rates[index] = rate;
+    }
+    */
 }

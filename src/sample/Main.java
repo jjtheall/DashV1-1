@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("StartupScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("BasalInput.fxml"));
         primaryStage.setTitle("Omnipod Dash");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
