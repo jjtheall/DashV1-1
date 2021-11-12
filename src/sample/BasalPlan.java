@@ -1,7 +1,7 @@
 package sample;
 
 public class BasalPlan {
-    
+
     private double[] rates = new double[24];
 
     public BasalPlan(double a, double b, double c, double d, double e, double f, double g, double h, double i,
