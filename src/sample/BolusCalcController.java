@@ -56,5 +56,13 @@ public class BolusCalcController {
         bolusDeliveryStartLabel.setVisible(true);
     }
 
+    @FXML
+    private void switchToHome(ActionEvent event)throws IOException{
+        root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }

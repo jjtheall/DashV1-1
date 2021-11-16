@@ -16,5 +16,6 @@
       <Button layoutX="76.0" layoutY="163.0" mnemonicParsing="false" onAction="#calculateBolus" text="Calculate Bolus" />
       <Button layoutX="196.0" layoutY="163.0" mnemonicParsing="false" onAction="#startBolusDelivery" text="Start Insulin Delivery" />
       <Label fx:id="bolusDeliveryStartLabel" layoutX="138.0" layoutY="226.0" text="Bolus Delivery Started!" visible="false" />
+      <Button layoutX="178.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToHome" text="Back" />
    </children>
 </AnchorPane>
