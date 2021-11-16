@@ -15,6 +15,6 @@
       <Label layoutX="56.0" layoutY="149.0" text="Target Blood Glucose:" />
       <TextField fx:id="targetBGField" layoutX="185.0" layoutY="145.0" />
       <Button layoutX="178.0" layoutY="188.0" mnemonicParsing="false" onAction="#sendData" text="Save" />
-      <Button layoutX="179.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToBolusCalc" text="Next" />
+      <Button layoutX="179.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToHome" text="Next" />
    </children>
 </AnchorPane>

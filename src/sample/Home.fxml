@@ -4,12 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#receiveData" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
    <children>
-      <Label layoutX="113.0" layoutY="97.0" text="Current Basal Rate/All Basal Info" />
-      <Button layoutX="338.0" layoutY="451.0" mnemonicParsing="false" text="Bolus" />
-      <Button layoutX="14.0" layoutY="451.0" mnemonicParsing="false" text="Edit Basal" />
-      <Button layoutX="117.0" layoutY="451.0" mnemonicParsing="false" text="Edit Ratios/Factors/Targets" />
+      <Label fx:id="BasalLabel" layoutX="113.0" layoutY="97.0" text="Current Basal Rate/All Basal Info" />
+      <Button layoutX="338.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToBolusCalc" text="Bolus" />
+      <Button layoutX="14.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToBasalInput" text="Edit Basal" />
+      <Button layoutX="117.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToStartupScene" text="Edit Ratios/Factors/Targets" />
    </children>
 </AnchorPane>
