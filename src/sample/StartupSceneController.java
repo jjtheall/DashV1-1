@@ -10,6 +10,9 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 import javafx.scene.Node;
 import javafx.fxml.FXMLLoader;
+import org.json.simple.JSONObject;
+import java.io.FileWriter;
+import org.json.simple.JSONArray;
 
 public class StartupSceneController {
 
@@ -40,6 +43,23 @@ public class StartupSceneController {
         d.setICRatio(ICRatio);
         d.setCorrectionFactor(correctionFactor);
         d.setTargetBG(targetBG);
+
+        JSONObject ratios = new JSONObject();
+        ratios.put("ICRatio", ICRatio);
+        ratios.put("correctionFactor",correctionFactor);
+        ratios.put("targetBG",targetBG);
+
+        JSONArray dataDetails = d.getDataDetails();
+        dataDetails.add(ratios);
+        d.setDataDetails(dataDetails);
+
+        try(FileWriter file = new FileWriter("data.json")){
+            file.write(dataDetails.toJSONString());
+            file.flush();
+        }
+        catch(IOException IOe){
+            IOe.printStackTrace();
+        }
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.close();

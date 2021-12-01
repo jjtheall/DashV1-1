@@ -1,5 +1,7 @@
 package sample;
 
+import org.json.simple.JSONArray;
+
 public class Data {
 
     private int ICRatio;
@@ -8,6 +10,7 @@ public class Data {
     private int curBG;
     private int carbs;
     private BasalPlan bp;
+    private JSONArray dataDetails;
 
     public Data(int ICRatio, int correctionFactor, int targetBG, int curBG, int carbs, BasalPlan bp){
         this.ICRatio = ICRatio;
@@ -79,5 +82,13 @@ public class Data {
 
     public void setBasalPlan(BasalPlan bp) {
         this.bp = bp;
+    }
+
+    public JSONArray getDataDetails() {
+        return dataDetails;
+    }
+
+    public void setDataDetails(JSONArray dataDetails) {
+        this.dataDetails = dataDetails;
     }
 }
