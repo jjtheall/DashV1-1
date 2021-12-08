@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#receiveData" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
    <children>
-      <Label fx:id="BasalLabel" layoutX="113.0" layoutY="97.0" text="Current Basal Rate/All Basal Info" />
       <Button layoutX="338.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToBolusCalc" text="Bolus" />
       <Button layoutX="14.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToBasalInput" text="Edit Basal" />
       <Button layoutX="117.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToStartupScene" text="Edit Ratios/Factors/Targets" />
+      <LineChart fx:id="lineChart" layoutY="14.0" legendVisible="false" prefHeight="286.0" prefWidth="370.0" title="        Active Basal Program">
+        <xAxis>
+          <NumberAxis autoRanging="false" label="Hour" upperBound="24.0">
+               <tickLabelFont>
+                  <Font size="11.0" />
+               </tickLabelFont></NumberAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Rate (U/hr)" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label fx:id="basalLabel" layoutX="132.0" layoutY="341.0" text="Current Basal Label" />
    </children>
 </AnchorPane>

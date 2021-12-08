@@ -5,11 +5,12 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
-import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 import javafx.scene.Node;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 
 public class HomeController {
@@ -20,17 +21,25 @@ public class HomeController {
     private Data d;
 
     @FXML
-    private Label BasalLabel;
+    LineChart<Integer,Double> lineChart;
+    @FXML
+    private Label basalLabel;
 
     @FXML
     private void receiveData(MouseEvent event){
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         d = (Data) stage.getUserData();
 
+        lineChart.getData().clear();
+        XYChart.Series<Integer,Double> series = new XYChart.Series<Integer,Double>();
+        for(int i=0; i<24; i++){
+            series.getData().add(new XYChart.Data<Integer,Double>(i+1,d.getBasalPlan().getRate(i)));
+        }
+        lineChart.getData().add(series);
         //set BasalLabel text to current hourly rate
         String curTime = java.time.LocalTime.now().toString();
         int hour = Integer.parseInt(curTime.substring(0,2));
-        BasalLabel.setText("Current Basal Rate: " + d.getBasalPlan().getRate(hour) + "U/hr");
+        basalLabel.setText("Current Basal Rate: " + d.getBasalPlan().getRate(hour) + "U/hr");
     }
 
     @FXML
